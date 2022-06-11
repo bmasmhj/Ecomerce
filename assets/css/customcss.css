@@ -1,0 +1,33 @@
+.search-input{
+    border: none;
+    border-bottom: 1px solid #000 !important;
+    outline: none;
+}
+
+.search-icon{
+    background:transparent;
+    border:none;
+}
+.img-fluid{
+    width: 100%;
+    object-fit: cover;
+}
+.fix-size{
+    height: 200px!important;
+
+}
+
+ /* Works on Chrome, Edge, and Safari */
+.table::-webkit-scrollbar {
+  width: 3px;
+}
+
+.table::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.table::-webkit-scrollbar-thumb {
+  background-color: rgb(41, 41, 41);
+  border-radius: 20px;
+  border: 3px solid rgb(158, 158, 158);
+}
