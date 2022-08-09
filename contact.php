@@ -71,6 +71,6 @@
       </div>
     </section>
 
-<?php require 'model/newsletter.php' ?>
+<?php require 'body/newsletter.php' ?>
 <?php require 'footer.php' ?>
 

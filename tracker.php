@@ -1,5 +1,5 @@
 <?php
-require 'controller/connection.php';
+require 'main/conn.php';
 
 if(!isset($_COOKIE['uniqvisit'])){
 	setCookie('uniqvisit','yes',time()+(60*60*24*30));

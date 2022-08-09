@@ -1,5 +1,5 @@
 <?php 
- require 'connection.php';
+ require 'conn.php';
 
 if(isset($_POST['newslettersub'])){
    

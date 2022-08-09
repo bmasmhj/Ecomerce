@@ -1,6 +1,6 @@
 <?php 
 session_start();
-require "connection.php";
+require "conn.php";
 $email = "";
 $name = "";
 $errors = array();

@@ -7,7 +7,7 @@
             <div class="row d-flex">
                 <div class="card w-100">
                     <div class="card-body">
-                        <form action="controller/update.php" method='post'>
+                        <form action="main/update.php" method='post'>
                             <label class="mx-2">Provience</label>
                                 <select class="form-control text-uppercase" name="provience" id="provience" >
                                     <option selected disabled>- - - select province - - -</option>

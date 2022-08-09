@@ -1,6 +1,6 @@
 
 
-<?php require "header.php"; require 'controller/globaldata.php'?>
+<?php require "header.php"; require 'main/globaldata.php'?>
 <div class="hero-wrap hero-bread" style="background-image: url('assets/images/bg_1.jpg');">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -10,7 +10,7 @@
         </div>
       </div>
     </div>
-<?php require 'controller/cartanlyser.php' ?>
+<?php require 'main/cartanlyser.php' ?>
 <form action="billing.php" method="post">
 <?php
 // $j=0;

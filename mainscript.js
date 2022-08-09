@@ -10,7 +10,7 @@ function add_to_cart(id){
     }
 
     $.ajax({
-        url: "controller/cartcontrller.php",
+        url: "main/cartcontrller.php",
         type: "POST",
         data: {
             "productname" : productname  ,
@@ -33,7 +33,7 @@ $('#newsletter').click(function(){
   if(apemail.match(mailformat)){
 
     $.ajax({
-      url: "controller/add.php",
+      url: "main/adddata.php",
       type: "POST",
       data: { "newslettersub" : apemail},
       success:function(response){
@@ -86,7 +86,7 @@ $('#newsletter').click(function(){
 function deletecartitem(id){
  if(confirm('Are you sure ?')==true){
    $.ajax({
-    url: "controller/cartcontrller.php",
+    url: "main/cartcontrller.php",
     type: "POST",
     data: {
       "action" : "delete",
@@ -155,7 +155,7 @@ $('#contactpage').on('submit', function(e) {
   if(fname!=''  & email!=''  & mailmsg!='' & mailsub!=''){
 
   $.ajax({
-  url: "controller/add.php",
+  url: "main/adddata.php",
   type: "POST",
   data: new FormData(this),
   contentType: false,

@@ -42,7 +42,7 @@ $('#confpw').keyup(function(){
 
 function deleteorder(id){
     $.ajax({
-        url: "controller/delete.php",
+        url: "main/delete.php",
         type: "POST",
         data: { 'deleteorder' : id },
         success:function(response){
@@ -58,7 +58,7 @@ function deleteorder(id){
 
 function cancelorder(id){
     $.ajax({
-        url: "controller/delete.php",
+        url: "main/delete.php",
         type: "POST",
         data: { 'cancelorder' : id },
         success:function(response){
@@ -78,7 +78,7 @@ $('#changeuserpw').click(function(){
     var c = $('#confpw').val();
     if( n != '' && c != '' && o !=''){
         $.ajax({
-            url: "controller/update.php",
+            url: "main/update.php",
             type: "POST",
             data: { 'o':o , 'n' : n, 'c':c},
             success:function(response){

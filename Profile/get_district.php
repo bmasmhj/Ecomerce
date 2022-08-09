@@ -1,7 +1,7 @@
 <?php 
 $pid = $_POST['pid'];
 
-require 'connection.php';
+require 'conn.php';
 
 
 $sql = "SELECT * FROM districts where p_id = $pid ORDER BY dname";

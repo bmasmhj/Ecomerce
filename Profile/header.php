@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php require '../controller/globaldata.php' ?>
+<?php require '../main/globaldata.php' ?>
 
 
 <html lang="en">

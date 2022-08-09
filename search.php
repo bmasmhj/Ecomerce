@@ -46,6 +46,6 @@ if(!isset($_GET['q'])){
   </section>
       
 
-<?php require 'model/featuredprod.php' ?>
-<?php require 'model/newsletter.php' ?>
+<?php require 'body/featuredprod.php' ?>
+<?php require 'body/newsletter.php' ?>
 <?php require 'footer.php' ?>

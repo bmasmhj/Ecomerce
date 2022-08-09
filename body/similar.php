@@ -11,6 +11,15 @@
     	<div class="container">
     		<div class="row">
 
+			
+			<?php 
+			
+			if(isset($_SESSION['lpmsemail'])){
+				require 'main/recommendation.php';
+			}else {
+
+			
+			?>
             <!-- Algorithm here  -->
                 <?php for($i = 0 ; $i<4 ; $i++) {?>
     			<div class="col-md-6 col-lg-3 ftco-animate fadeInUp ftco-animated">
@@ -41,7 +50,8 @@
     					</div>
     				</div>
     			</div>
-                <?php } ?>
+                <?php }
+				} ?>
     		</div>
     	</div>
     </section>

@@ -1,8 +1,8 @@
 <?php require_once "controllerUserData.php"; ?>
 <?php 
-$email = $_SESSION['email'];
-if($email == false){
-  header('Location: Login');
+$email = $_SESSION['lpmsemail'];
+if(!isset($_SESSION['lpmsemail'])){
+  header('Location: login-user.php');
 }
 ?>
 <?php require 'header.php' ?>

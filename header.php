@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <?php 
 
-require 'controller/infofetcher.php';
-require 'controller/globaldata.php';
+require 'main/globaldata.php';
 require 'tracker.php';
 
 

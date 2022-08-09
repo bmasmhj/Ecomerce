@@ -12,13 +12,13 @@ $password = $_SESSION['password'];
         $code = $fetch_info['code'];
         if($status == "verified"){
             if($code != 0){
-                header('Location: ResetCode');
+                // header('Location: reset-code.php');
             }else if($code == 0){
                 header('Location: ../Profile');
 
             }
         }else{
-            header('Location: UserOTP');
+            header('Location: user-otp.php');
         }
     }
 }

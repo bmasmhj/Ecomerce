@@ -56,7 +56,7 @@ $invoice = substr(base64_encode($in2) , 0 , 10);
 
 for($k=0;$k<$j;$k++){
     $a=$i[$k];
-    require "controller/connection.php";
+    require "main/conn.php";
     $cart_sql = "SELECT * FROM cart WHERE id = $a ";
     $email = $_SESSION['lpmsemail'];
     $result_cart= $con->query($cart_sql);
