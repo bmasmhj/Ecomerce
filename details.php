@@ -8,6 +8,8 @@ if ($proctresult->num_rows > 0) {
     while ($proctrow = $proctresult->fetch_assoc()) {
 
 ?>
+<link rel="stylesheet" href="assets/css/star-rating-svg.css">
+
 <section class="ftco-section">
     <div class="container">
         <div class="row">
@@ -17,21 +19,17 @@ if ($proctresult->num_rows > 0) {
             <div class="col-lg-6 product-details pl-md-5 ftco-animate fadeInUp ftco-animated">
                 <h3 id='productname_<?php echo $proctrow['id']?>'><?php echo $proctrow['name']?></h3>
                 <div class="rating d-flex">
-                        <!-- <p class="text-left mr-4">
-                            <a href="#" class="mr-2">5.0</a>
-                            <a href="#"><span class="ion-ios-star-outline"></span></a>
-                            <a href="#"><span class="ion-ios-star-outline"></span></a>
-                            <a href="#"><span class="ion-ios-star-outline"></span></a>
-                            <a href="#"><span class="ion-ios-star-outline"></span></a>
-                            <a href="#"><span class="ion-ios-star-outline"></span></a>
-                        </p>
+
                         <p class="text-left mr-4">
                             <a href="#" class="mr-2" style="color: #000;"> <span style="color: #bbb;">Rating :</span></a>
-                        </p> -->
-                        <p class="text-left">
+                        </p>
+                <div class="my-rating"></div> 
+                <br>
+                     
+                    </div>
+                    <p class="text-left">
                             <a href="#" class="mr-2" style="color: #000;"><span style="color: #bbb;">Quantity : </span><?php echo $proctrow['quantity'].' '.$proctrow['quantityname']?></a>
                         </p>
-                    </div>
                 <p class="price"><span>Rs <span id='productprice_<?php echo $proctrow['id']?>'><?php echo $proctrow['price']?></span> /-</span></p>
                 <p><?php echo $proctrow['description']?> </p>
                     <div class="row mt-4">
@@ -51,6 +49,12 @@ if ($proctresult->num_rows > 0) {
             </div> 
         </div>
         <p>
+        <?php 
+
+$totalratingmusic = $proctrow['rating']/;
+
+?>
+
             <?php
                 if($proctrow['status'] == 'out of stock'){ ?>
             <a href="javascript:void()" class="btn btn-black py-3 px-5">Out of Stock</a>
@@ -71,9 +75,36 @@ if ($proctresult->num_rows > 0) {
     echo 'not found';
 }
 ?>
-  <?php require 'model/similar.php' ?>
+  <?php require 'body/similar.php' ?>
 
 
-    <?php require 'model/newsletter.php' ?>
+    <?php require 'body/newsletter.php' ?>
 
 <?php require 'footer.php' ?>
+<script src='assets/js/jquery.star-rating-svg.min.js'></script>
+<script src='assets/js/jquery.star-rating-svg.js'></script>
+
+
+<script>
+     var inirate = <?php echo  $totalratingmusic  ?>;
+    var c = "<?php echo $_GET['a'] ?>";
+
+    $(".my-rating").starRating({
+    starSize: 20,
+    initialRating: inirate,
+	readOnly: true
+    });
+    $('#showratingstars').click(function(){
+
+        $.ajax({
+            url: "rating.php",
+            type: "POST",
+            data: { "searchkey" : 'true',
+                    "c" : c },
+            success:function(response){
+                $('#ratinghere').html(response);                
+            }
+        });
+    });
+
+</script>
