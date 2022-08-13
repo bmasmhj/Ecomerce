@@ -28,7 +28,7 @@ if(isset($_POST["checkout"]))
             }
             for($k=0;$k<$j;$k++){
                 $a=$i[$k];
-                require "controller/connection.php";
+                require "main/conn.php";
                 $cart_sql = "SELECT * FROM cart WHERE userID='$userId' AND id='$a' ";
                 $cartdata = [];
                 $result_cart= $con->query($cart_sql);

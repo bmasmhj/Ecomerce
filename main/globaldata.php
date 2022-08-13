@@ -168,12 +168,15 @@ if(isset($_SESSION['lpmsemail']) && isset($_SESSION['password'])){
         $lpmsname=substr( $fetch_info['name'], 0, strrpos($fetch_info['name'], ' '));
         if($status == "verified"){
             if($code != 0){
-                header('Location: Profile/reset-code.php');
+                // header('Location: Profile/reset-code.php');
+                exit;
             }else if($code == 0){
                 $userId = $fetch_info['id'];
             }
         }else{
-            header('Location: Profile/user-otp.php');
+            // header('Location: Profile/user-otp.php');
+            exit;
+
         }
 
                 

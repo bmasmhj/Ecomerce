@@ -1,6 +1,8 @@
 
 <?php
-require 'connection.php';
+
+require 'conn.php';
+
 if(isset($_POST["add_to_cart"]))
     {
 		session_start();
@@ -91,7 +93,7 @@ if(isset($_GET["actions"]))
 				$item_data = json_encode($cart_data);
 				$_SESSION['shopping_cart'] = $item_data;
 
-				// header("location:Cart?remove=1");
+				header("location:Cart?remove=1");
 			}
 		}
 	}
@@ -99,7 +101,7 @@ if(isset($_GET["actions"]))
 	{
 		// $_SESSION['shopping_cart'] = '';
 
-		// header("location:Cart?clearall=1");
+		header("location:Cart?clearall=1");
 	}
   if($_GET["actions"] == "dbclear")
 	{

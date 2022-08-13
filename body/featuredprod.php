@@ -19,6 +19,8 @@
 
                       <div class="text py-3 pb-4 px-3 text-center">
                           <h3><a href="details.php?a=<?php echo $productval['productcode']?>" id="productname_<?php echo $productval['id'] ?>"><?php echo $productval['name']?></a></h3>
+                          <p><?php echo $productval['street']?></p>
+                          
                           <div class="d-flex">
                               <div class="pricing">
                                   <p class="price">Rs. <span id="productprice_<?php echo $productval['id'] ?>"><?php echo $productval['price'] ?></span>/-</p>

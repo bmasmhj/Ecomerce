@@ -51,7 +51,6 @@ if ($proctresult->num_rows > 0) {
         <p>
         <?php 
 
-$totalratingmusic = $proctrow['rating']/;
 
 ?>
 
@@ -86,25 +85,30 @@ $totalratingmusic = $proctrow['rating']/;
 
 
 <script>
-     var inirate = <?php echo  $totalratingmusic  ?>;
-    var c = "<?php echo $_GET['a'] ?>";
+      getLocation()
 
-    $(".my-rating").starRating({
-    starSize: 20,
-    initialRating: inirate,
-	readOnly: true
-    });
-    $('#showratingstars').click(function(){
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
 
-        $.ajax({
-            url: "rating.php",
-            type: "POST",
-            data: { "searchkey" : 'true',
-                    "c" : c },
-            success:function(response){
-                $('#ratinghere').html(response);                
-            }
-        });
-    });
+function showPosition(position) {
+  var long = position.coords.latitude ;
+  var lat = position.coords.longitude;
+  $.ajax({
+        url: "main/rcc.php",
+        type: "POST",
+        data: {
+            'long' : long,
+            'lat' : lat,
+            'recomend' : 'true'},
+        success:function(response){
+            $('#reccomendation').html(response);
+        }
+  });
 
+}
 </script>

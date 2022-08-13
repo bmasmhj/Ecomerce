@@ -60,9 +60,9 @@
                         <div class="row">
                             <div class="col-md-6 text-left">
                                 <span class="text-uppercase mt-2">Total  </span><br>
-                            </div>
+</div>
                             <div class="col-md-6">
-                                <span>  Rs <?php echo $total?>  </span><br>
+                                <span>  Rs <?php echo $r?>  </span><br>
                             </div>
                         </div>
 
@@ -79,7 +79,7 @@
         
     <script src="assets/js/html2canvas.min.js"></script>
 
-    <?php require 'model/newsletter.php' ?>
+    <?php require 'body/newsletter.php' ?>
     <?php require 'footer.php' ?>
 
     <script>

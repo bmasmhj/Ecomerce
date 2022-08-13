@@ -1,4 +1,5 @@
-<?php require 'controller/cartcontrller.php'; ?>
+<?php require 'main/cartcontrller.php'; ?>
+
 <style>
 	/* .showlogin{
 		display:block!important;
@@ -19,7 +20,7 @@
 	<form action="checkout.php" id='cart' method="post" novalidate>
 
         <?php
-		// session_start();
+
 		if(isset($_SESSION['lpmsemail']))
 		{
 			$email = $_SESSION['lpmsemail'];
